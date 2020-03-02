@@ -19,9 +19,4 @@ public class ChatFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentchat, container, false);
         return rootView;
     }
-
-    public static ChatFragment saveChat(){
-        ChatFragment chatFragment = new ChatFragment();
-        return chatFragment;
-    }
 }

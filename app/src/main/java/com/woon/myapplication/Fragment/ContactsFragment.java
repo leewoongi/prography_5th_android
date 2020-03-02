@@ -19,10 +19,4 @@ public class ContactsFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentcontacts, container, false);
         return rootView;
     }
-
-    public static ContactsFragment saveContacts(){
-        ContactsFragment contactsFragment = new ContactsFragment();
-        return contactsFragment;
-    }
-
 }

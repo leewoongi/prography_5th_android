@@ -19,9 +19,4 @@ public class CallFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragmentcall, container, false);
         return rootView;
     }
-
-    public static CallFragment saveCall(){
-        CallFragment callFragMent = new CallFragment();
-        return callFragMent;
-    }
 }
