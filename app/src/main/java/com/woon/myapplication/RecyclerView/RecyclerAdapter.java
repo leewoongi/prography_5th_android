@@ -41,7 +41,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         private TextView key;
         private TextView title;
         private TextView director;
-        private TextView year;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -49,15 +48,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             key = itemView.findViewById(R.id.key);
             title = itemView.findViewById(R.id.title);
             director = itemView.findViewById(R.id.director);
-            year = itemView.findViewById(R.id.year);
         }
 
         public void onBind(Data data, int position) {
             String s = "" + (position + 1);
             key.setText(s);
             title.setText(data.getTitle());
-            director.setText(data.getDirector());
-            year.setText(data.getReleaseDate());
+            director.setText(data.getDirector() + "/" + data.getReleaseDate());
         }
     }
 }

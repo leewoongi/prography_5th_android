@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:padding="8dp"
     android:gravity="center_vertical"
     android:layout_marginBottom="8dp"
@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
             android:text="TITLE"
+
             android:textSize="15sp"
             android:textColor="@android:color/black"
             android:textStyle="bold"/>
@@ -46,16 +47,5 @@
             android:textSize="13sp"
             android:textColor="@android:color/darker_gray"/>
 
-
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/year"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="year"
-        android:textSize="13sp"
-        android:gravity="center_vertical"/>
-
 </LinearLayout>

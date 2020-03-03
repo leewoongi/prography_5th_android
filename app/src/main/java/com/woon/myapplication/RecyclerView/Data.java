@@ -3,15 +3,22 @@ package com.woon.myapplication.RecyclerView;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Data implements Parcelable{
     private String title;
     private String description;
     private String director;
     private String producer;
-    private String releaseDate;
-    private String rtScore;
+    @SerializedName("release_date")
+    @Expose
+    private Integer releaseDate;
+    @SerializedName("rt_score")
+    @Expose
+    private Integer rtScore;
 
-    public Data(String title, String description, String director, String producer, String releaseDate, String rtScore) {
+    public Data(String title, String description, String director, String producer, int releaseDate, int rtScore) {
         this.title = title;
         this.description = description;
         this.director = director;
@@ -25,8 +32,8 @@ public class Data implements Parcelable{
         description = in.readString();
         director = in.readString();
         producer = in.readString();
-        releaseDate = in.readString();
-        rtScore = in.readString();
+        releaseDate = in.readInt();
+        rtScore = in.readInt();
     }
 
     public static final Parcelable.Creator<Data> CREATOR = new Parcelable.Creator<Data>() {
@@ -73,19 +80,19 @@ public class Data implements Parcelable{
         this.producer = producer;
     }
 
-    public String getReleaseDate() {
+    public int getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(String releaseDate) {
+    public void setReleaseDate(int releaseDate) {
         this.releaseDate = releaseDate;
     }
 
-    public String getRtScore() {
+    public int getRtScore() {
         return rtScore;
     }
 
-    public void setRtScore(String rtScore) {
+    public void setRtScore(int rtScore) {
         this.rtScore = rtScore;
     }
 
@@ -100,7 +107,7 @@ public class Data implements Parcelable{
         dest.writeString(description);
         dest.writeString(director);
         dest.writeString(producer);
-        dest.writeString(releaseDate);
-        dest.writeString(rtScore);
+        dest.writeInt(releaseDate);
+        dest.writeInt(rtScore);
     }
 }
