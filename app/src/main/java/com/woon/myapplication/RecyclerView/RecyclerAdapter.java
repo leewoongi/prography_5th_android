@@ -29,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listData.size();
     }
 
     public void addItems(Data data) {
@@ -53,9 +53,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         }
 
         public void onBind(Data data, int position) {
-            key.setText(position + 1);
+            String s = "" + (position + 1);
+            key.setText(s);
             title.setText(data.getTitle());
-            director.setText(data.getTitle());
+            director.setText(data.getDirector());
             year.setText(data.getReleaseDate());
         }
     }
