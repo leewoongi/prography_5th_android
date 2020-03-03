@@ -14,6 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.woon.myapplication.R;
 import com.woon.myapplication.RecyclerView.Data;
 import com.woon.myapplication.RecyclerView.RecyclerAdapter;
+import com.woon.myapplication.Retrofit2.RetrofitClient;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChatFragment extends Fragment {
 
@@ -37,18 +44,21 @@ public class ChatFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter();
+        final RecyclerAdapter adapter = new RecyclerAdapter();
 
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
-        adapter.addItems(new Data("제목","감독", "설명","경무","2020","100"));
+        RetrofitClient.getService().getFilms().enqueue(new Callback<List<Data>>() {
+            @Override
+            public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
+                for (Data d : response.body()) {
+                    adapter.addItems(d);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Data>> call, Throwable t) {
+
+            }
+        });
 
         recyclerView.setAdapter(adapter);
     }
