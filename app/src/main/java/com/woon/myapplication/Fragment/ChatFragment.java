@@ -35,16 +35,16 @@ public class ChatFragment extends Fragment {
     //view = rootView
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         initialize(view);
     }
+
 
     private void initialize(View view) {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         final RecyclerAdapter adapter = new RecyclerAdapter();
+        recyclerView.setAdapter(adapter);
 
         RetrofitClient.getService().getFilms().enqueue(new Callback<List<Data>>() {
             @Override
@@ -59,7 +59,5 @@ public class ChatFragment extends Fragment {
 
             }
         });
-
-        recyclerView.setAdapter(adapter);
     }
 }

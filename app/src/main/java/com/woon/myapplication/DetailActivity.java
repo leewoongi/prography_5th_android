@@ -16,7 +16,6 @@ public class DetailActivity extends AppCompatActivity {
     private TextView dTitle;
     private TextView dScore;
     private TextView dDescription;
-    private ArrayList<Data> dataList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
