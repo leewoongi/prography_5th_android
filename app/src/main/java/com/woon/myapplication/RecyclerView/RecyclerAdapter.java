@@ -1,5 +1,6 @@
 package com.woon.myapplication.RecyclerView;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.woon.myapplication.DetailActivity;
 import com.woon.myapplication.R;
 
 import java.util.ArrayList;
@@ -55,6 +57,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             key.setText(s);
             title.setText(data.getTitle());
             director.setText(data.getDirector() + "/" + data.getReleaseDate());
+
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(itemView.getContext(), DetailActivity.class);
+                Data dData = new Data(listData.get(position).getTitle(), listData.get(position).getDescription(), listData.get(position).getDirector(),
+                        listData.get(position).getProducer(),listData.get(position).getReleaseDate(), listData.get(position).getRtScore());
+
+                intent.putExtra("DATA", dData);
+                itemView.getContext().startActivity(intent);
+            });
         }
     }
 }
+
