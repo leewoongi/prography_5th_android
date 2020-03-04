@@ -5,9 +5,9 @@
   Swipe가 가능한 Bottom Navigation View 구현 
   
   <div>
-    ![1](https://user-images.githubusercontent.com/25498573/75878461-f3e38d80-5e5c-11ea-90c0-9753bbd21263.jpg)
-    ![2](https://user-images.githubusercontent.com/25498573/75878988-dfec5b80-5e5d-11ea-955d-27336ebec279.jpg)
-    ![3](https://user-images.githubusercontent.com/25498573/75878997-e2e74c00-5e5d-11ea-820b-c3b12f95cd85.jpg)
+    <![1](https://user-images.githubusercontent.com/25498573/75878461-f3e38d80-5e5c-11ea-90c0-9753bbd21263.jpg)>
+    <![2](https://user-images.githubusercontent.com/25498573/75878988-dfec5b80-5e5d-11ea-955d-27336ebec279.jpg)>
+    <![3](https://user-images.githubusercontent.com/25498573/75878997-e2e74c00-5e5d-11ea-820b-c3b12f95cd85.jpg)>
   </div>
  
 - 아래 URL에서 JSON 형식의 정보를 받아온 후(GET) 이를 가운데(CHATS)Fragment에 RecyclerView로  
